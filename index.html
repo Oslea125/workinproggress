@@ -1,0 +1,424 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+
+  <title>Oslea & Scott</title>
+
+  <!-- GOOGLE FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+  <!-- LOADER -->
+
+  <div class="loader" id="loader">
+    Loading...
+  </div>
+
+  <!-- APP -->
+
+  <div class="phone">
+
+    <!-- STATUS BAR -->
+
+    <div class="status-bar">
+
+      <span class="status-time" id="statusTime">
+        00:00
+      </span>
+
+      <div class="status-icons">
+
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M1.5 8.5a13 13 0 0 1 21 0"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+          />
+        </svg>
+
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <rect x="2" y="7" width="3" height="10" rx="1"/>
+          <rect x="7" y="5" width="3" height="12" rx="1"/>
+          <rect x="12" y="3" width="3" height="14" rx="1"/>
+        </svg>
+
+      </div>
+
+    </div>
+
+    <!-- SCREENS -->
+
+    <div class="screens">
+
+      <!-- HOME -->
+
+      <div class="screen active" id="home">
+
+        <div class="couple-header">
+
+          <div class="couple-avatars">
+
+            <div class="avatar">O</div>
+
+            <div class="avatar-mid">•</div>
+
+            <div class="avatar">S</div>
+
+          </div>
+
+          <div class="couple-names">
+            Oslea & Scott
+          </div>
+
+          <div class="together">
+            together since April 13, 2026
+          </div>
+
+        </div>
+
+        <div class="hero-card">
+
+          <div class="hero-quote">
+            Built on late replies, long calls,
+            and showing up anyway.
+          </div>
+
+          <div class="hero-sub">
+            <span id="dayCount">1</span> days in.
+          </div>
+
+        </div>
+
+        <div class="quick-grid">
+
+          <button class="quick-card" data-nav="chat">
+
+            <div class="q-icon">💬</div>
+
+            <div class="q-label">
+              Chat
+            </div>
+
+            <div class="q-sub">
+              Real-time messaging
+            </div>
+
+          </button>
+
+          <button class="quick-card" data-nav="gallery">
+
+            <div class="q-icon">📷</div>
+
+            <div class="q-label">
+              Gallery
+            </div>
+
+            <div class="q-sub">
+              Shared photos
+            </div>
+
+          </button>
+
+          <button class="quick-card" data-nav="notes">
+
+            <div class="q-icon">✉️</div>
+
+            <div class="q-label">
+              Notes
+            </div>
+
+            <div class="q-sub">
+              Last updated today
+            </div>
+
+          </button>
+
+          <button
+            class="quick-card"
+            id="darkModeToggle"
+          >
+
+            <div class="q-icon">🌙</div>
+
+            <div class="q-label">
+              Dark Mode
+            </div>
+
+            <div class="q-sub">
+              Toggle theme
+            </div>
+
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- CHAT -->
+
+      <div class="screen" id="chat">
+
+        <div class="chat-header">
+
+          <button class="back-btn back-button">
+            ← Back
+          </button>
+
+          <div class="chat-avatar">
+            S
+          </div>
+
+          <div class="chat-info">
+
+            <div class="chat-name">
+              Scott
+            </div>
+
+            <div class="chat-status">
+              online
+            </div>
+
+          </div>
+
+        </div>
+
+        <div
+          class="chat-messages"
+          id="chatMessages"
+        ></div>
+
+        <div class="chat-input-row">
+
+          <input
+            class="chat-input"
+            id="chatInput"
+            placeholder="Message..."
+            autocomplete="off"
+          />
+
+          <button
+            class="chat-send"
+            id="sendBtn"
+            aria-label="Send Message"
+          >
+            ↑
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- GALLERY -->
+
+      <div class="screen" id="gallery">
+
+        <div class="screen-header">
+
+          <button class="back-btn back-button">
+            ← Back
+          </button>
+
+          <div class="screen-title">
+            Gallery
+          </div>
+
+        </div>
+
+        <div class="gallery-upload">
+
+          <input
+            type="file"
+            id="imageUpload"
+            accept="image/*"
+          />
+
+        </div>
+
+        <div
+          class="gallery-grid"
+          id="galleryGrid"
+        ></div>
+
+      </div>
+
+      <!-- NOTES -->
+
+      <div class="screen" id="notes">
+
+        <div class="screen-header">
+
+          <button class="back-btn back-button">
+            ← Back
+          </button>
+
+          <div class="screen-title">
+            Notes
+          </div>
+
+        </div>
+
+        <div class="daily-note">
+
+          <div class="daily-note-label">
+            From Oslea
+          </div>
+
+          <div class="daily-note-text">
+            "I like who I am around you."
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- NAV -->
+
+    <nav class="nav">
+
+      <button
+        class="nav-item active"
+        data-nav="home"
+        id="nav-home"
+      >
+
+        <svg viewBox="0 0 24 24">
+          <path d="M3 11.5L12 4l9 7.5"/>
+          <path d="M5 10v10h14V10"/>
+        </svg>
+
+        <span class="nav-label">
+          Home
+        </span>
+
+      </button>
+
+      <button
+        class="nav-item"
+        data-nav="chat"
+        id="nav-chat"
+      >
+
+        <svg viewBox="0 0 24 24">
+          <path d="M4 5h16v11H7l-3 3V5z"/>
+        </svg>
+
+        <span class="nav-label">
+          Chat
+        </span>
+
+      </button>
+
+      <button
+        class="nav-item"
+        data-nav="gallery"
+        id="nav-gallery"
+      >
+
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="5" width="18" height="14" rx="2"/>
+          <circle cx="8.5" cy="10" r="1.5"/>
+          <path d="M21 15l-5-5L5 21"/>
+        </svg>
+
+        <span class="nav-label">
+          Gallery
+        </span>
+
+      </button>
+
+      <button
+        class="nav-item"
+        data-nav="notes"
+        id="nav-notes"
+      >
+
+        <svg viewBox="0 0 24 24">
+          <path d="M7 3h10v18l-5-3-5 3V3z"/>
+        </svg>
+
+        <span class="nav-label">
+          Notes
+        </span>
+
+      </button>
+
+    </nav>
+
+  </div>
+
+  <!-- FIREBASE -->
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+
+  <!-- YOUR FIREBASE CONFIG -->
+
+  <script>
+
+    const firebaseConfig = {
+
+      apiKey: "PASTE_API_KEY",
+
+      authDomain: "PASTE_AUTH_DOMAIN",
+
+      projectId: "PASTE_PROJECT_ID",
+
+      storageBucket: "PASTE_STORAGE_BUCKET",
+
+      messagingSenderId: "PASTE_SENDER_ID",
+
+      appId: "PASTE_APP_ID"
+
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    const db = firebase.firestore();
+
+    const storage = firebase.storage();
+
+  </script>
+
+  <!-- APP JS -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+
